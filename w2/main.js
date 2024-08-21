@@ -21,4 +21,4 @@ const myTransport = 32;
 const myTotalcarbon = myHousehold + myHomesize + myFood + myWater + myPurchases + myWaste + myRecycle + myTransport
 // 10. write JS to update the rendered html (index.html) with total footprint.
 const myFootprint = document.querySelector("h2"); 
-myFootprint.textContent = "93";
+myFootprint.textContent = myTotalcarbon;
