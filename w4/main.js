@@ -42,7 +42,31 @@ cfpData.push([houseHoldMembers, houseSize, houseHoldPTS, houseSizePoints, total]
 }
 
 function displayOutput() {
+  for (arr of cfpData){
+    console.log(arr)
+    const output = document.getElementById("output");
+    const newP = document.createElement("p");
+    const newP1 = document.createElement("p");
+    const newP2 = document.createElement("p");
+    const newP3 = document.createElement("p");
+    const newP4 = document.createElement("p");
+    const newP5 = document.createElement("p");
+    const lineBreak = document.createElement("br");
+    newP.innerHTML = "<strong>Carbon Foot Print Data</strong>";
+    newP1.textContent = `Number of Household members ${arr[0]}`;
+    newP2.textContent = `Pionts For Number of Household Members ${arr[2]}`;
+    newP3.textContent = `House Size ${arr[1]}`;
+    newP4.textContent = `Pionts For House Size ${arr[3]}`;
+    newP5.textContent = `Carbon Footprint total is ${arr[4]}`;
+    output.appendChild(newP);
+    output.appendChild(newP1);
+    output.appendChild(newP2);
+    output.appendChild(newP3);
+    output.appendChild(newP4);
+    output.appendChild(newP5);
+    output.appendChild(lineBreak);
   
+  }
 }
 
 start(5, "apartment");
