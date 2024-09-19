@@ -58,19 +58,13 @@ function start(firstName, lastName, houseHoldMembers, houseSize) {
 function displayOutput() {
  for (obj of cfpData) {
     console.log(obj);
-    const nameH4 = document.createElement("h4");
-    nameH4.textContent = `First Name: ${obj.firstName}`;
-    const lastNameH5 = document.createElement("h5");
-    lastNameH5.textContent = `Last Name: ${obj.lastName}`;
     const newH2 = document.createElement("h2");
     newH2.textContent = `Carbon Footprint ${obj.cfpTotal}`;
     const newH3 = document.createElement("h3");
-    newH3.textContent = `Based on the number in and size of home`; 
+    newH3.textContent = `Based on the number in and size of home for ${obj.firstName} ${obj.lastName}`; 
     const newP = document.createElement("p");
     newP.textContent = `This number is based on the number of people in the house of ${obj.houseM} (score: ${obj.houseMPTS}),`;
     newP.textContent += `and a ${obj.houseS} size of home (score: ${obj.houseSPTS}).`;
-    OUTPUT.appendChild(nameH4);
-    OUTPUT.appendChild(lastNameH5);
     OUTPUT.appendChild(newH2);
     OUTPUT.appendChild(newH3);
     OUTPUT.appendChild(newP);
@@ -89,6 +83,3 @@ FORM.addEventListener("submit", function(e){
    FORM.reset();
 })
 
-//is the apartment score correct? if not why not?... no its not working bc "apartment" needs to be "apt".
-
-//why are we doing all this work in the form to make sure the user gives us good data? bc if we dont, undefined data can be given causing our calculation to be off.
