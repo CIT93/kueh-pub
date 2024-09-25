@@ -1,4 +1,7 @@
 const TBL = document.getElementById("tab-data");
+const table = document.createElement("table");
+const thead = document.createElement("thead");
+const tbody = document.createElement("tbody");
 
 function renderTblHeading() {
     const table = document.createElement("table");
@@ -40,4 +43,4 @@ function renderTblHeading() {
 
   export {renderTbl, renderTblHeading};
 
-  // we were getting an error because we havent run the code and submit any data to cfpData
+  
