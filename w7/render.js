@@ -18,14 +18,14 @@ function renderTblHeading() {
 }
   
 function renderTbl(data) {
+  data.forEach(function(item) {
     const tr = document.createElement("tr");
-    const trTextArr = ["kue", 3, "large", 20];
-    trTextArr.forEach(function(text) {
-      const td = document.createElement("td");
+    const newData = [item.firstName, item.lastName, item.houseHoldMembers, item.houseSize, item.houseMPTS, item. houseSPTS, item.cfpTotal];
+    newData.forEach(function(text){
+      const td = document.createElement("td")
       td.textContent = text;
-      tr.appendChild(td);
-  });
-
+      tr.appendChild(td)
+    });
     const td = document.createElement("td");
     const editButton = document.createElement("button");
     const deleteButton = document.createElement("button");
@@ -37,12 +37,15 @@ function renderTbl(data) {
     tbody.appendChild(tr);
     table.appendChild(tbody);
     TBL.appendChild(table);
-  };
+  });
+}
 
 
 renderTblHeading();
 
 
 export {renderTbl, renderTblHeading};
+
+//need help!!! im stuck..
 
   

@@ -54,3 +54,4 @@ function determineHouseSizePts(size) {
   }
 
   export {start, determineHouseSizePts, determineHouseHoldPts};
+  
