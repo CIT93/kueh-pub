@@ -33,6 +33,16 @@ function renderTblHeading() {
       renderTbl(data);
     })
 
+    bntEdit.addEventListener(`click`, function(e){
+      e.preventDefault();
+  
+      const formData = new FormData(FORM)
+      const data = Object.fromEntries(formData.entries());
+      renderTbl(data);
+      TBL.innerHTML = ""
+ 
+    });
+
 
     return td;
 
@@ -63,11 +73,13 @@ function renderTblHeading() {
   }
   
   function renderTbl(data) {
+    TBL.innerHTML = "";
+    if (data.length > 0) {
         const table = renderTblHeading();
         const tbody = renderTblBody(data);
         table.appendChild(tbody);
         TBL.appendChild(table);
-    
+    } else {}
 }
 
   export {renderTbl};
