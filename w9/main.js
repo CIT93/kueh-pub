@@ -1,7 +1,11 @@
 import {renderTbl} from "./render.js";
 import { determineHouseSizePts, determineHouseHoldPts } from "./cfp.js";
 import {FORM, TBL} from "./global.js";
-import {saveLS, cfpData} from "./storage.js"
+import {saveLS, cfpData} from "./storage.js";
+
+const firstNameEL= document.getElementById('firstName');
+const lastNameEL= document.getElementById('lastName');
+const submitEL= document.getElementById('submitError');
 
 
 function start(firstName, lastName, houseHoldMembers, houseSize) {
@@ -36,30 +40,28 @@ function validateField(event) {
 };
 
 // Attach blur event listeners
-document.getElementById('firstName').addEventListener('blur', validateField);
-document.getElementById('lastName').addEventListener('blur', validateField);
+firstNameEL.addEventListener('blur', validateField);
+lastNameEL.addEventListener('blur', validateField);
 
-// Listen for form submission
-document.getElementById('simpleForm').addEventListener('submit', function (event) {
-  //Prevent default behavior
-  event.preventDefault();
-  const firstNameIsValid = document.getElementById('firstName').value !== '';
-  const lastNameIsValid = document.getElementById('lastName').value !== '';
-  if (firstNameIsValid && lastNameIsValid) {
-      alert('Form is valid. You can proceed with submitting the form to the server.');
-  }
-})
+
 
 FORM.addEventListener("submit", function(e){
   e.preventDefault();
  const firstName = FORM.firstname.value;
  const lastName = FORM.lastname.value;
- const houseHoldMembers = parseInt(FORM.housem.value);
- const houseSize = FORM.houses.value;
- start(firstName, lastName, houseHoldMembers, houseSize);
- saveLS(cfpData);
- renderTbl(cfpData);
- FORM.reset();
+ const firstNameIsValid = firstNameEL.value !== '';
+ const lastNameIsValid = lastNameEL.value !== '';
+ if (firstNameIsValid && lastNameIsValid) {
+  submitEL.textContent = '';
+  const houseHoldMembers = parseInt(FORM.housem.value);
+  const houseSize = FORM.houses.value;
+  start(firstName, lastName, houseHoldMembers, houseSize);
+  saveLS(cfpData);
+  renderTbl(cfpData);
+  FORM.reset();
+ }else{
+  submitEL.textContent = "Form requires first name and last name";
+ }
 })
 
 
