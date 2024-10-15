@@ -4,15 +4,30 @@ import {FORM, FNAME, LNAME, SUBMIT} from "./global.js";
 import {saveLS, cfpData} from "./storage.js";
 
 
-const start = (first, last, houseHoldMembers, houseSize) => {
-  const houseHoldPTS = determineHouseHoldPts(houseHoldMembers);
-  const houseSizePTS = determineHouseSizePts(houseSize);
+// const start = (first, last, houseHoldMembers, houseSize) => {
+//   const houseHoldPTS = determineHouseHoldPts(houseHoldMembers);
+//   const houseSizePTS = determineHouseSizePts(houseSize);
+//   const total = houseHoldPTS + houseSizePTS;
+//   cfpData.push({
+//     firstName: first,
+//     lastName: last,
+//     houseM: houseHoldMembers,
+//     houseS: houseSize,
+//     houseMPTS: houseHoldPTS,
+//     houseSPTS: houseSizePTS,
+//     cfpTotal: total,
+//   });
+// }
+
+const start = (...i) => {
+  const houseHoldPTS = determineHouseHoldPts(i[2]);
+  const houseSizePTS = determineHouseSizePts(i[3]);
   const total = houseHoldPTS + houseSizePTS;
   cfpData.push({
-    firstName: first,
-    lastName: last,
-    houseM: houseHoldMembers,
-    houseS: houseSize,
+    firstName: i[0],
+    lastName: i[1],
+    houseM: i[2],
+    houseS: i[3],
     houseMPTS: houseHoldPTS,
     houseSPTS: houseSizePTS,
     cfpTotal: total,
@@ -21,7 +36,7 @@ const start = (first, last, houseHoldMembers, houseSize) => {
 
 renderTbl(cfpData);
 
-const validateField = event => {
+const validateField = (event) => {
   const field = event.target.value;
   const fieldId = event.target.id;
   const fieldError = document.getElementById(`${fieldId}Error`);
@@ -41,7 +56,7 @@ LNAME.addEventListener('blur', validateField);
 
 
 
-FORM.addEventListener("submit", e => {
+FORM.addEventListener("submit", (e) => {
   e.preventDefault();
  if (FNAME.value !== '' && LNAME.value !== '') {
   SUBMIT.textContent = '';
@@ -73,9 +88,9 @@ const result = add2(100);
 
 //IIFE
 
-//const a = 3
+const a = 3;
 
-// (function(a){
-//   console.log("inside the function");
-//   console.log(a);
-// })(a);
+(function(a){
+    console.log("inside the function");
+    console.log(a);
+})(a);

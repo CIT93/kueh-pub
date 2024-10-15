@@ -7,7 +7,7 @@ const renderTblHeading = () => {
     const thead = document.createElement("thead");
     const tr = document.createElement("tr");
     const headingTextArr = ["Name", "HouseHold", "HouseSize", "Carbon Footprint", "Action"];
-    headingTextArr.forEach(function(text) {
+    headingTextArr.forEach(text => {
       const th = document.createElement("th");
       th.textContent = text;
       tr.appendChild(th);

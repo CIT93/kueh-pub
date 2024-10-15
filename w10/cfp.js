@@ -1,4 +1,4 @@
-const determineHouseSizePts = (size = "apt") => {
+const determineHouseSizePts = (size = "medium") => {
     let houseSizePoints = 0;
     if (size === "large") {
       houseSizePoints = 10;
