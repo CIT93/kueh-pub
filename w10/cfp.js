@@ -1,4 +1,4 @@
-const determineHouseSizePts = function(size) {
+const determineHouseSizePts = (size = "apt") => {
     let houseSizePoints = 0;
     if (size === "large") {
       houseSizePoints = 10;
@@ -8,13 +8,11 @@ const determineHouseSizePts = function(size) {
       houseSizePoints = 4;
     } else if (size === "apt") {
       houseSizePoints = 2;
-    } else {
-      console.log("no update to points");
-    }
+    } 
     return houseSizePoints;
   }
   
-  const determineHouseHoldPts = function(numberInHousehold) {
+  const determineHouseHoldPts = (numberInHousehold = 1) => {
     let houseHoldPoints = 0;
     if (numberInHousehold === 1) {
       houseHoldPoints = 14;
@@ -30,8 +28,6 @@ const determineHouseSizePts = function(size) {
       houseHoldPoints = 4;
     } else if (numberInHousehold > 6) {
       houseHoldPoints = 2;
-    } else {
-      console.log("no update to points");
     }
     return houseHoldPoints;
   }

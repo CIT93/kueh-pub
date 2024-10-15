@@ -2,7 +2,7 @@ import {FORM, TBL} from "./global.js";
 import { saveLS } from "./storage.js";
 
 
-const renderTblHeading = function() {
+const renderTblHeading = () => {
     const table = document.createElement("table");
     const thead = document.createElement("thead");
     const tr = document.createElement("tr");
@@ -17,13 +17,13 @@ const renderTblHeading = function() {
     return table;
   }
 
-  const onUpdate = function(index, data) {
+  const onUpdate = (index, data) => {
     data.splice(index, 1);
       saveLS(data);
       renderTbl(data);  
   }
   
-  const renderTblBtn = function(obj, index, data){
+  const renderTblBtn = (obj, index, data) => {
     const td = document.createElement("td");
     const bntEdit = document.createElement("button");
     const bntDel = document.createElement("button");
@@ -31,11 +31,11 @@ const renderTblHeading = function() {
     bntDel.textContent = "Delete";
     td.appendChild(bntEdit);
     td.appendChild(bntDel);
-    bntDel.addEventListener(`click`, function(e){
+    bntDel.addEventListener(`click`, (e) => {
       onUpdate(index, data);
     })
 
-    bntEdit.addEventListener(`click`, function(e){
+    bntEdit.addEventListener(`click`, (e) => {
     FORM[1].value = obj.firstName;
     FORM[2].value = obj.LastName;
     FORM[3].value = obj.houseM;
@@ -46,9 +46,9 @@ const renderTblHeading = function() {
 
   }
 
-  const renderTblBody = function(data){
+  const renderTblBody = (data) => {
     const tbody = document.createElement("tbody");
-    data.forEach(function(obj, index){
+    data.forEach((obj, index) => {
       console.log(index);
       const tr = document.createElement("tr");
       for(const [key, value] of Object.entries(obj)){
@@ -69,7 +69,7 @@ const renderTblHeading = function() {
 
   }
   
-  const renderTbl = function(data) {
+  const renderTbl = (data) => {
     TBL.innerHTML = "";
     if (data.length !== 0) {  
       const table = renderTblHeading();
