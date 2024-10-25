@@ -1,1 +1,0 @@
-<!-- week 10 revisiting functions. This video helped me alot in understanding functions. To be honest, all the functions i wrote so far was just blind trial and error or a function that i asked chatgtp to help write. -->
