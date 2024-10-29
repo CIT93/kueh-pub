@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>w13-pub</title>
+    <script defer src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Time to get FIT!</h1>
+        <form id="exerciseForm">
+            <div>
+            <label for="">Types of Exercise</label>
+            <select name="exercise" id= exercise required>
+                <option value="">---Please choose exercise---</option>
+                <option value="push-ups">push ups</option>
+                <option value="pull-ups">pull ups</option>
+                <option value="sit-ups">sit ups</option>
+                <option value="jumpin-jacks">jumping jacks</option>
+            </select>
+            </div>
+            <div>
+            <label for="reps">Target Number of Reps</label>
+            <input type="number" name="reps" id="reps" min="1" max="20" required><br>
+            </div>    
+            <div>
+            <label for="time">Time in Minutes</label>
+            <select id="time" name="time" required>
+                <option value="">---Please choose time---</option>
+                <option value="1Min">1min</option>
+                <option value="2Min">2min</option>
+                <option value="3Min">3min</option>
+                <option value="4Min">4min</option>
+            </select>    
+            </div>
+            <button type="submit">Start</button>
+        </form>
+    </div>
+    <h2 id="message">Click Start Button to start!</h2>
+</body>
+</html>
