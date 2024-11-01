@@ -3,9 +3,9 @@ const FORM = document.getElementById("exerciseForm");
 FORM.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    const exercise = document.getElementById("exercise").value;
-    const reps = document.getElementById("reps").value;
-    const time = document.getElementById("time").value;
+    const exercise = FORM.exercise.value;
+    const reps = FORM.reps.value;
+    const time = FORM.time.value;
 
     displayStartMessage(exercise, reps, time)
         .then(() => displayEndMessage(exercise))
