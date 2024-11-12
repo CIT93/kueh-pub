@@ -98,3 +98,26 @@ function onFailure(){
 }
 
 start()
+
+async function start2(){
+    try{
+        const data = await fetch('https://api.weather.gov/gridpoints/HNX/53,100/forecast')
+        const result = await data.json();
+        onSuccess(result.properties.periods[1].temperature);
+    } catch(e){
+        onerror(e);
+    }
+
+    
+}
+
+
+function onSuccess(result){
+    console.log(`Success: ${result}`)
+}
+
+function onFailure(){
+    console.log(`Error: ${err}`)
+}
+
+start2()
