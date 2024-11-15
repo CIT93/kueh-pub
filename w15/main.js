@@ -40,11 +40,6 @@ const validateField = (event) => {
 FNAME.addEventListener('blur', validateField);
 LNAME.addEventListener('blur', validateField);
 
-const showAverage = () => {
-  const average = calculateAverageFootprint(cfpData);
-  console.log(`Average Carbon Footprint: ${average}`);
-};
-
 
 
 FORM.addEventListener("submit", (e) => {
@@ -56,7 +51,6 @@ FORM.addEventListener("submit", (e) => {
       cfpData.push(fpObj);
       saveLS(cfpData);
       renderTbl(cfpData);
-      showAverage(); // average function
       FORM.reset();
   } else {
       SUBMIT.textContent = "Form requires first name and last name";
