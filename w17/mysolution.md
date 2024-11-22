@@ -1,0 +1,2 @@
+Examine your water consumption..
+i would just create 2 different inputs. one input is for the if you have a dishwasher/washing machine then add these points, if not then add zero. the other input is for if you have both, i would just double the points.
