@@ -58,7 +58,7 @@
                 </select>
             </div>
             <div>
-                <label>Water Consumption</label>
+                <label>Examine your Water Consumption</label>
                 <select name="water" id="water" required>
                     <option value="">---How many times do you run dishwasher or washing machine---</option>
                     <option value="3">More than 9 times per week</option>
@@ -66,20 +66,20 @@
                     <option value="1">Between 1 to 3 times per week</option>
                     <option value="0">Don't have a dishwasher</option>
                 </select>
+            <br>
+                <label for="dish_washer">Do you have both a dishwasher and washing machine?</label>
+                <input type="checkbox" id="both" name="dish_washer" checked/>
             </div>
             <div>
-                <label for="hasBoth">Do you have both a dishwasher and washing machine?</label>
-                <input type="checkbox" id="hasBoth" name="hasBoth" checked/>
-            </div>
-            <div>
-                <label>Household Purchases</label>
-                <select name="purchase" id="purchase" required>
-                    <option value="">---Determine how many household purchases you make each year---</option>
-                    <option value="10">you purchase more than 7 items</option>
-                    <option value="8">you purchase between 5 and 7 items</option>
-                    <option value="6">you purchase between 3 and 5 items</option>
-                    <option value="4">you purchase less than 3 items</option>
-                    <option value="2">you purchase almost nothing or only secondhand items</option>
+                <p>Household purchases are new pieces of furniture, electronics, or other household gadgets per year</p>
+                <label>Determine how many household purchases you make each year</label>
+                <select name="purchases" required>
+                    <option value="">---Yearly Purchases---</option>
+                    <option value="10">More than 7 new pieces</option>
+                    <option value="8">Between 5 and 7 items</option>
+                    <option value="6">Between 3 and 5 items</option>
+                    <option value="4">Less than 3 items</option>
+                    <option value="2">Almost nothing or only secondhand items</option>
                 </select>
             </div>
             <button type="submit">Submit</button>

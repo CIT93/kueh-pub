@@ -1,4 +1,4 @@
-import {FORM, TBL, hasBothCheckbox} from "./global.js";
+import {FORM, TBL} from "./global.js";
 import { saveLS } from "./storage.js";
 
 const calculateAvg = (data) => {
@@ -58,9 +58,10 @@ const renderTblHeading = () => {
     FORM.houses.value = obj.houseSize;
     FORM.food.value = obj.foodChoice;
     FORM.foodSource.value = obj.foodSource;
-    FORM.water.value = obj.waterConsumPoints.toString();
-    FORM.purchase.value = obj.purchasePoints.toString();
-    hasBothCheckbox.checked = obj.waterConsumPoints !== obj.waterConsum;
+    FORM.water.value = obj.waterValue;
+    FORM.dish_washer.checked = obj.both;
+    FORM.purchases.value = obj.purchasesPoints;
+   
     onUpdate(index, data);
 });
     return td;

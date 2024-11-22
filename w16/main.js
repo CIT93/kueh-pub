@@ -1,5 +1,5 @@
 import {renderTbl} from "./render.js";
-import {FORM, FNAME, LNAME, SUBMIT, hasBothCheckbox} from "./global.js";
+import {FORM, FNAME, LNAME, SUBMIT, WATER, BOTH} from "./global.js";
 import {saveLS, cfpData} from "./storage.js";
 import {FP} from "./fp.js";
 
@@ -51,16 +51,26 @@ FORM.addEventListener("submit", (e) => {
       e.target.houses.value,
       e.target.food.value,
       e.target.foodSource.value,
-      parseInt(e.target.water.value),
-      hasBothCheckbox.checked,
-      parseInt(e.target.purchase.value)
+      e.target.water.value,
+      e.target.dish_washer.checked ? parseInt(e.target.water.value) * 2 : parseInt(e.target.water.value),
+      e.target.dish_washer.checked,
+      parseInt(e.target.purchases.value)
     );
 
       cfpData.push(fpObj);
       saveLS(cfpData);
       renderTbl(cfpData);
       FORM.reset();
+      BOTH.disable = false;
   } else {
       SUBMIT.textContent = "Form requires first name and last name";
   }
 });
+
+WATER.addEventListener("change", e =>{
+  if(parseInt(WATER.value) === 0){
+    BOTH.disable = true;
+  }else{
+    BOTH.disable = false;
+  }
+})
