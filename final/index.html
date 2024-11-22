@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my-app-Final</title>
+    <script type="module" defer src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2 class="center">Enter Your Sleep and Work Data</h2>
+    
+    <form id="sleepWorkoutForm">
+        <label for="today">Day of the Week:</label>
+        <select id="today" name="today" required>
+            <option value="">---Select Day---</option>
+            <option value="Mon">Monday</option>
+            <option value="Tue">Tuesday</option>
+            <option value="Wed">Wednesday</option>
+            <option value="Thu">Thursday</option>
+            <option value="Fri">Friday</option>
+            <option value="Sat">Saturday</option>
+            <option value="Sun">Sunday</option>
+        </select>
+        <span id="todayError" class="error-message"></span>
+        <br><br>
+
+        <label for="dayType">Day Type:</label>
+        <select id="dayType" name="dayType" required>
+            <option value="workday">Workday</option>
+            <option value="nonWorkday">Non-Workday</option>
+        </select>
+        <span id="dayTypeError" class="error-message"></span>
+        <br><br>
+    
+        <label for="sleep">Hours of Sleep Last Night:</label>
+        <input type="number" id="sleep" name="sleep" min="0" max="24" required>
+        <span id="sleepError" class="error-message"></span>
+        <br><br>
+    
+        <label for="naps">Minutes of Naps:</label>
+        <input type="number" id="naps" name="naps" min="0" max="59" required>
+        <span id="napsError" class="error-message"></span>
+        <br><br>
+    
+        <label for="workLoad">Workload Type:</label>
+        <select id="workLoad" name="workLoad" required>
+            <option value="">---Select Workload---</option>
+            <option value="heavy">Heavy</option>
+            <option value="light">Light</option>
+        </select>
+        <span id="workLoadError" class="error-message"></span>
+        <br><br>
+    
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="OUTPUT"></div>
+    <div id="tab-data"></div>
+
+</body>
+</html>
