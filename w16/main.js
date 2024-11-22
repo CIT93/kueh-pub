@@ -1,5 +1,5 @@
 import {renderTbl} from "./render.js";
-import {FORM, FNAME, LNAME, SUBMIT, waterSelect, doubleWaterCheckbox} from "./global.js";
+import {FORM, FNAME, LNAME, SUBMIT, hasBothCheckbox} from "./global.js";
 import {saveLS, cfpData} from "./storage.js";
 import {FP} from "./fp.js";
 
@@ -39,34 +39,22 @@ FNAME.addEventListener('blur', validateField);
 LNAME.addEventListener('blur', validateField);
 
 
-waterSelect.addEventListener("change", (e) => {
-  if (e.target.value === "0") { 
-      doubleWaterCheckbox.checked = false; 
-      doubleWaterCheckbox.disabled = true; 
-  } else {
-      doubleWaterCheckbox.disabled = false; 
-  }
-});
-
-
 FORM.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  if (FNAME.value !== '' && LNAME.value !== '') {
-      SUBMIT.textContent = '';
-
-      const hasBoth = e.target.doubleWater.checked;
-
-      const fpObj = new FP(
-          FNAME.value,
-          LNAME.value,
-          parseInt(e.target.housem.value),
-          e.target.houses.value,
-          e.target.food.value,
-          e.target.foodSource.value,
-          parseInt(e.target.water.value),
-          hasBoth
-      );
+  if (FNAME.value !== "" && LNAME.value !== "") {
+    SUBMIT.textContent = "";
+    const fpObj = new FP(
+      FNAME.value,
+      LNAME.value,
+      parseInt(e.target.housem.value),
+      e.target.houses.value,
+      e.target.food.value,
+      e.target.foodSource.value,
+      parseInt(e.target.water.value),
+      hasBothCheckbox.checked,
+      parseInt(e.target.purchase.value)
+    );
 
       cfpData.push(fpObj);
       saveLS(cfpData);
