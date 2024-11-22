@@ -5,7 +5,7 @@ function renderTblHeading() {
     const table = document.createElement("table");
     const thead = document.createElement("thead");
     const tr = document.createElement("tr");
-    const headingTextArr = ["Today", "Total Sleep Hours", "Work Load", "Recommendation", "Action"];
+    const headingTextArr = ["Today", "Total Sleep Hours", "Work Load/Household chores", "Recommendation", "Action"];
     headingTextArr.forEach(function(text) {
       const th = document.createElement("th");
       th.textContent = text;
